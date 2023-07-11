@@ -1,0 +1,23 @@
+{
+  "name": "playwright_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiareadc/playwright_testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiareadc/playwright_testing/issues"
+  },
+  "homepage": "https://github.com/tiareadc/playwright_testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.36.0"
+  }
+}
