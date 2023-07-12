@@ -3,25 +3,27 @@ import { AbstractPage } from './AbstractPage'
 import ENV from "../utils/env"
 
 export class LoginPage extends AbstractPage {
-readonly usernameInput: Locator
-readonly passwordInput: Locator
-readonly loginBtn: Locator
+  readonly loginNavbar: Locator
+  readonly usernameInput: Locator
+  readonly passwordInput: Locator
+  readonly loginBtn: Locator
 
-constructor (page: Page){
-  super(page)
-  this.usernameInput = page.locator('#email')
-  this.passwordInput = page.locator('#password')
-  this.loginBtn = page.locator('#loginBtn')
-}
+  constructor (page: Page){
+    super(page)
+    this.loginNavbar = page.locator('#login2')
+    this.usernameInput = page.locator('#loginusername')
+    this.passwordInput = page.locator('#loginpassword')
+    this.loginBtn = page.getByRole('button', { name: 'Log in' })
+  }
 
-async visit(){
-  await this.page.goto(ENV.BASE_URL)
-}
+  async visit(){
+    await this.page.goto(ENV.BASE_URL)
+  }
 
-async login(){
-    await this.usernameInput.type(ENV.USERNAME)
+  async login(){
+    await this.loginNavbar.click()
+    await this.usernameInput.fill(ENV.USERNAME)
     await this.passwordInput.type(ENV.PASSWORD)
     await this.loginBtn.click()
   }
-
 }

@@ -13,8 +13,8 @@ test.describe('e2e login', () => {
 
   test('Login successfullly', async () => {
     await loginPage.login()
-    const successMessage = page.locator('#success_message')
-    await expect(successMessage).toBeVisible()
+    const logOutNavbar = page.locator('#logout2')
+    await expect(logOutNavbar).toBeVisible()
   })
 
   test.afterAll(async () => {
